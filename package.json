@@ -1,0 +1,27 @@
+{
+  "name": "todayhot",
+  "version": "1.0.0",
+  "description": "GitHub-Actions-Today-Hot",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.2",
+    "fs-extra": "^8.1.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
+  "ci": {
+    "version": "8"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "ff",
+  "license": "MIT"
+}

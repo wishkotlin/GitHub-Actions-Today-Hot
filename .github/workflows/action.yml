@@ -1,0 +1,38 @@
+name: 'GitHub-Actions-Today-Hot'
+
+on:
+  push:
+  # schedule:
+  #   - cron: '0 21 * * *'
+jobs:
+  bot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout codes'
+        uses: actions/checkout@v2
+      - name: 'Set up node'
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: 'Install yarn'
+        run: npm install yarn -g
+      - name: 'Install npm packages'
+        run: yarn install
+      - name: 'get data'
+        run: yarn start
+      # - name: 'Get Weather'
+      #   run: bash ./weather.sh
+      - name: 'Get Date'
+        run: echo "::set-env name=REPORT_DATE::$(TZ=':Asia/Shanghai' date '+%Y-%m-%d %T')"
+      - name: 'Send mail'
+        uses: dawidd6/action-send-mail@master
+        with:
+          server_address: smtp.qq.com
+          server_port: 465
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: Shanghai Weather Report (${{env.REPORT_DATE}})
+          body: file://data/hot.json
+          to: xiaoliumail@foxmail.com
+          from: GitHub Actions
+          content_type: text/html
