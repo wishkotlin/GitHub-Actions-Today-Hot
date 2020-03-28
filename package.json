@@ -6,14 +6,16 @@
   "dependencies": {
     "axios": "^0.19.2",
     "cheerio": "^1.0.0-rc.2",
-    "fs-extra": "^8.1.0"
+    "fs-extra": "^8.1.0",
+    "puppeteer": "^2.1.1",
+    "puppeteer-screenshot": "^1.0.11"
   },
   "devDependencies": {},
   "engines": {
     "node": ">=8.9.0"
   },
   "scripts": {
-    "start": "node app.js"
+    "start": "node getPdf.js"
   },
   "ci": {
     "version": "8"

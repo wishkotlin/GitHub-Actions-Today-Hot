@@ -32,7 +32,7 @@ jobs:
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
           subject: Shanghai Weather Report (${{env.REPORT_DATE}})
-          body: file://data/hot.json
+          body: file://data/hot.pdf
           to: xiaoliumail@foxmail.com
           from: GitHub Actions
-          content_type: text/html
+          content_type: application/pdf
