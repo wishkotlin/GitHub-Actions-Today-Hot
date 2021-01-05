@@ -4,7 +4,7 @@
   "description": "GitHub-Actions-Today-Hot",
   "private": true,
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "cheerio": "^1.0.0-rc.2",
     "fs-extra": "^8.1.0",
     "puppeteer": "^2.1.1",
